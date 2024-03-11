@@ -1,6 +1,14 @@
 package data
 
-import "database/sql"
+import (
+	"database/sql"
+	"errors"
+)
+
+var (
+	ErrRecordNotFound = errors.New("models: record not found")
+	ErrEditConflict   = errors.New("models: edit conflict")
+)
 
 type Models struct {
 	Movies MovieModel
